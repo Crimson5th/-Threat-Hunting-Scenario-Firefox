@@ -29,21 +29,18 @@ Management suspects that some employees may be using Firefox browsers to bypass 
 Searched for any file that had the string "firefox" in it and discovered what looks like the user "labuser" downloaded a firefox installer, did something that resulted in many Firefox-related files being copied to the desktop.
 
 ```kql
-DeviceFileEvents  
-| where DeviceName == "threat-hunt-lab"  
-| where InitiatingProcessAccountName == "employee"  
-| where FileName contains "tor"  
-| where Timestamp >= datetime(2024-11-08T22:14:48.6065231Z)  
-| order by Timestamp desc  
-| project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256, Account = InitiatingProcessAccountName
+DeviceFileEvents
+| where DeviceName == "danganronpa"
+| where FileName == "firefox"
 ```
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/71402e84-8767-44f8-908c-1805be31122d">
+![firefox0](https://github.com/user-attachments/assets/d592a028-62dd-4116-9787-0359e10006f9)
+
 
 ---
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
-Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-14.0.1.exe". Based on the logs returned, at `2024-11-08T22:16:47.4484567Z`, an employee on the "threat-hunt-lab" device ran the file `tor-browser-windows-x86_64-portable-14.0.1.exe` from their Downloads folder, using a command that triggered a silent installation.
+Searched for any `ProcessCommandLine` that contained the string "Firefox Installer (1).exe". Based on the logs returned, at `2025-05-15T19:40:05.4013853Z`, an employee on the "danganronpa" device ran the file `Firefox Installer (1).exe` from their Downloads folder, using a command that triggered a silent installation.
 
 **Query used to locate event:**
 
