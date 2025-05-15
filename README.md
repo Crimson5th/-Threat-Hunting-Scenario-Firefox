@@ -92,12 +92,12 @@ DeviceNetworkEvents
 
 ## Summary
 
-The user "employee" on the "threat-hunt-lab" device initiated and completed the installation of the TOR browser. They proceeded to launch the browser, establish connections within the TOR network, and created various files related to TOR on their desktop, including a file named `tor-shopping-list.txt`. This sequence of activities indicates that the user actively installed, configured, and used the TOR browser, likely for anonymous browsing purposes, with possible documentation in the form of the "shopping list" file.
+The user "labuser" on the "danganronpa" device initiated and completed the installation of the Firefox browser. They proceeded to launch the browser, establish connections within the Firefox browser. This sequence of activities indicates that the user actively installed, configured, and used the firefox browser.
 
 ---
 
 ## Response Taken
 
-TOR usage was confirmed on the endpoint `threat-hunt-lab` by the user `employee`. The device was isolated, and the user's direct manager was notified.
+Firefox usage was confirmed on the endpoint `danganronpa` by the user `labuser`. The device was isolated, and the user's direct manager was notified.
 
 ---
